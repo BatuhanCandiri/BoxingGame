@@ -1,0 +1,54 @@
+public class Fighter {
+
+    String name;
+    int damage;
+    int health;
+    int weight;
+    int fighting;
+    int dodge;
+
+    Fighter(String name,int damage,int health,int weight,int fighting,int dodge){
+
+        this.name=name;
+        this.damage=damage;
+        this.health=health;
+        this.weight = weight;
+        if (fighting >= 0 && fighting <= 100){
+            this.fighting=fighting;
+        }else {
+            this.fighting=0;
+        }
+        if (dodge >= 0 && dodge <= 100){
+            this.dodge=dodge;
+        }else {
+            this.dodge=0;
+        }
+    }
+    int hit(Fighter foe){
+        System.out.println(this.name+" => "+foe.name+" "+this.damage+" HASAR VERDİ ");
+        if (foe.isDodge()){
+            System.out.println(foe.name+" HASARI SAVURDU ");
+            return foe.health;
+        }
+
+        if (foe.health-this.damage<=0){
+            return 0;
+        }else{
+            return foe.health-this.damage;
+        }
+
+    }
+    boolean isFighting(){
+
+        double isFight = Math.random()*100;
+        return isFight<=this.fighting;
+
+    }
+    boolean isDodge(){
+
+        double dodgeNumber = Math.random()*100;
+        return dodgeNumber<=this.dodge;
+
+    }
+
+}

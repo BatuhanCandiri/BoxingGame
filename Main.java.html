@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String name;
+        String name1;
+        int list1;
+        int weight=0;
+        int weight1=0;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("===================================================");
+        System.out.print("1. Boksörün Adı : ");
+        name = input.nextLine();
+
+        System.out.print("2. Boksörün Adı : ");
+        name1=input.nextLine();
+
+        System.out.println("===================================================");
+        String list ="1-)Hafif sinek sıklet (Light flywigh):\n" +
+                "2-)Sinek Sıklet: (flyweight):\n" +
+                "3-)Horoz sıklet (Bantamweight):\n" +
+                "4-)Tüy sıklet (Featherweighth):\n" +
+                "5-)Safif sıklet (Lightweigh):\n" +
+                "6-)Hafif Walter sıklet (Lİght welter weight):\n" +
+                "7-)Welter sıklet (Welterweight):\n" +
+                "8-)Yarı Orta sıklet (Light Middlewelight):\n" +
+                "9-)Orta sıklet (Middleweight):\n" +
+                "10-)Yarı ağır sıklet:\n"+
+                "11-)Ağır sıklet (heavyweight):\n"+
+                "12-)Süper ağır sıklet (Süper heayweight):";
+
+        System.out.println(list);
+
+        System.out.println("================================================");
+        System.out.print("Siklet Seçimini Yapınız : ");
+        list1 = input.nextInt();
+
+        if (list1==1){
+            weight=48;
+            weight1=49;
+        } else if (list1==2) {
+            weight=51;
+            weight1=52;
+        } else if (list1==3) {
+            weight=54;
+            weight1=55;
+        } else if (list1==4) {
+            weight=57;
+            weight1=58;
+        } else if (list1==5) {
+            weight=60;
+            weight1=61;
+        } else if (list1==6) {
+            weight=63;
+            weight1=64;
+        } else if (list1==7) {
+            weight=67;
+            weight1=68;
+        } else if (list1==8) {
+            weight=71;
+            weight1=72;
+        } else if (list1==9) {
+            weight=75;
+            weight1=76;
+        } else if (list1==10) {
+            weight=81;
+            weight1=82;
+        } else if (list1==11) {
+            weight=91;
+            weight1=92;
+        } else if (list1==12) {
+            weight=100;
+            weight1=101;
+        }else{
+            System.out.println("Geçersiz Giriş!");
+        }
+
+        Fighter f1 = new Fighter(name,15,55,weight,50,50);
+        Fighter f2 = new Fighter(name1,15,55,weight1,50,50);
+
+        Match match = new Match(f1,f2,weight,weight1);
+        match.run();
+
+    }
+
+}
